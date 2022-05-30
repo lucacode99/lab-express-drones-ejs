@@ -2,10 +2,13 @@
 
 <%  drones.forEach((drone) => {%>
 
-    <div>
+    <div style="border: 1px solid black; width: 300px; margin: 20px">
 <h3> <%= drone.name %> </h3>
 <h3> <%= drone.propellers %> </h3>
 <h3> <%= drone.maxSpeed %> </h3>
+<a href="drones/<%= drone._id %>/edit">Edit</a> 
 </div>
 
 <% }) %> 
+
+<!-- id -->

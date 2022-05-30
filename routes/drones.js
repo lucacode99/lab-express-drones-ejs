@@ -41,15 +41,39 @@ router.post('/drones/create', async (req, res) => {
 
 
 
-router.get('/drones/:id/edit', (req, res, next) => {
-  // Iteration #4: Update the drone
-  // ... your code here
+
+
+// Iteration #4: Update the drone
+router.get('/drones/:id/edit', async (req, res) => {
+  try {
+  const singleDrone = await Drone.findById(req.params.id)
+    console.log (singleDrone)
+    res.render('drones/update-form.ejs', {singleDrone})
+  } catch (err) {
+    console.log("passing the single drone to the view has failed, oh boy!", (err))
+  }
 });
 
+
+
+
+
+
+
+// Iteration #4: Update the drone
 router.post('/drones/:id/edit', (req, res, next) => {
-  // Iteration #4: Update the drone
-  // ... your code here
+ 
+  
 });
+
+
+
+
+
+
+
+
+
 
 router.post('/drones/:id/delete', (req, res, next) => {
   // Iteration #5: Delete the drone
